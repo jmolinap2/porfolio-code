@@ -1,0 +1,49 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const WORK_EXPERIENCE  = [
+  {
+    date: "Actualmente...",
+    title: "Creador de Contenido",
+    company: "Twitch",
+    description:
+      "Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.",
+    link: "https://twitch.tv/midudev",
+  },
+  {
+    date: "Septiembre 2022",
+    title: "Principal Frontend Engineer",
+    company: "Adevinta Spain",
+    description:
+      "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.",
+  },
+]
+const EDUCATION = [
+  {
+    date: "2005 - 2008",
+    title: "Arte y Multimedia",
+    company: "Universidad de Oxford",
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?",
+  },
+  // Otros elementos de educación
+]
+const { type } = Astro.props
+---
+
+
+<div class="contenido-seccion">
+  <div class="fila">
+    <div class="col izquierda">
+     <!--  <h3>{type === 'education' ? 'Educación' : 'Experiencia de trabajo'}</h3> -->
+      <div class="item izq">
+        {type === 'education'
+          ? EDUCATION.map((edu) => (
+              <ExperienceItem {...edu} />
+            ))
+          : WORK_EXPERIENCE.map((exp) => (
+              <ExperienceItem {...exp} />
+            ))}
+      </div>
+    </div>
+  </div>
+</div>

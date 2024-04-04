@@ -50,15 +50,15 @@ const navItems = [
   document.addEventListener("astro:page-load", () => {
     const sections = document.querySelectorAll("section")
     const navItems = document.querySelectorAll("header nav a")
-
+    let color= "text-blue-500"
     const callback = (entries: any[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-yellow-500")
+              item.classList.add(color)
             } else {
-              item.classList.remove("text-yellow-500")
+              item.classList.remove(color)
             }
           })
         }
@@ -90,14 +90,17 @@ const navItems = [
 
 <style>
   nav {
+    width: 40%;
     animation: nav-shadown 1s linear both;
     animation-timeline: scroll();
     animation-range: 0 100px;
+    
   }
 
   @keyframes nav-shadown {
     to {
-      @apply shadow-lg ring-1 backdrop-blur dark:bg-gray-800/90 bg-white/50 ring-white/10;
+      /* Ajustar los valores de color aquí */
+      @apply shadow-lg ring-1 backdrop-blur dark:bg-blue-600/100 bg-blue-200/10 ring-white/10;
     }
   }
 </style>

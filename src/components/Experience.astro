@@ -1,6 +1,6 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro"
-const EXPERIENCIE = [
+const WORK_EXPERIENCE  = [
   {
     date: "Actualmente...",
     title: "Creador de Contenido",
@@ -17,14 +17,33 @@ const EXPERIENCIE = [
       "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.",
   },
 ]
+const EDUCATION = [
+  {
+    date: "2005 - 2008",
+    title: "Arte y Multimedia",
+    company: "Universidad de Oxford",
+    description:
+      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?",
+  },
+  // Otros elementos de educación
+]
+const { type } = Astro.props
 ---
 
-<ol class="relative mt-16">
-  {
-    EXPERIENCIE.map((experiencie) => (
-      <li class="">
-        <ExperienceItem {...experiencie} />
-      </li>
-    ))
-  }
-</ol>
+
+<div class="contenido-seccion">
+  <div class="fila">
+    <div class="col izquierda">
+     <!--  <h3>{type === 'education' ? 'Educación' : 'Experiencia de trabajo'}</h3> -->
+      <div class="item izq">
+        {type === 'education'
+          ? EDUCATION.map((edu) => (
+              <ExperienceItem {...edu} />
+            ))
+          : WORK_EXPERIENCE.map((exp) => (
+              <ExperienceItem {...exp} />
+            ))}
+      </div>
+    </div>
+  </div>
+</div>

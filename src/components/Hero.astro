@@ -1,9 +1,10 @@
 ---
-const personalImageAlt = "Miguel Ángel"
-import Badge from "@/components/Badge.astro"
-import LinkedInIcon from "@/components/icons/LinkedIn.astro"
-import MailIcon from "@/components/icons/Mail.astro"
-import SocialPill from "@/components/SocialPill.astro"
+const personalImageAlt = "Miguel Ángel";
+import Badge from "@/components/Badge.astro";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import WhatsappIcon from "@/components/icons/Whatsapp.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import SocialPill from "@/components/SocialPill.astro";
 ---
 
 <div class="max-w-xl">
@@ -30,19 +31,26 @@ import SocialPill from "@/components/SocialPill.astro"
   <p
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
   >
-    Más de 3 años de experiencia. <strong
-      >Ingeniero en Sistemas y Creador de Contenido sobre Programación</strong
-    > de Barcelona, España 🇪🇸. Especializado en el desarrollo de aplicaciones web
-    únicas.
-  </p>
+  Más de 3 años de experiencia como <strong>Ingeniero en Sistemas </strong>
+  de Guayaquil, Ecuador.
+   Especializado en el desarrollo de aplicaciones web y aplicaciones para Windows.
+   <br />
+  <span class="text-yellow-300">He desarrollado una amplia variedad de aplicaciones, desde sistemas empresariales hasta aplicaciones web innovadoras.</span>
+</p>
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:jmolinap95@gmail.com">
       <MailIcon class="size-4" />
       Contáctame
     </SocialPill>
-    <SocialPill href="https://linkedin.com/in/jesus-alejandro-molina-peñaherrera">
+    <SocialPill
+      href="https://linkedin.com/in/jesus-alejandro-molina-peñaherrera"
+    >
       <LinkedInIcon class="size-4" />
       LinkedIn
+    </SocialPill>
+    <SocialPill href="https://wa.me/your-whatsapp-0960712144">
+      <WhatsappIcon class="size-4" />
+      WhatsApp
     </SocialPill>
   </nav>
 </div>

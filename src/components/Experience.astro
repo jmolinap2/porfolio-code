@@ -1,31 +1,52 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro"
-const WORK_EXPERIENCE  = [
+
+const WORK_EXPERIENCE = [
   {
-    date: "Actualmente...",
-    title: "Creador de Contenido",
-    company: "Twitch",
+    date: "Oct 2024 – Abr 2025",
+    title: "Desarrollador de Software",
+    company: "Agrosoft Latam",
     description:
-      "Divulgo sobre programación y desarrollo web en diferentes plataformas. Galardonado como mejor creador de contenido de habla no-inglesa en 2022 y mejor comunidad en 2023 por GitHub.",
-    link: "https://twitch.tv/midudev",
+      "Desarrollo de soluciones empresariales para el sector agrícola e industrial usando Angular, C# .NET y SQL Server. Automatización de reportes contables y financieros.",
   },
   {
-    date: "Septiembre 2022",
-    title: "Principal Frontend Engineer",
-    company: "Adevinta Spain",
+    date: "Abr 2024 – Sep 2024",
+    title: "Analista de Datos",
+    company: "Metropolitan Touring C.A.",
     description:
-      "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.",
+      "Análisis y visualización de datos empresariales mediante Power BI, conectando con bases de datos Oracle y creando consultas complejas en PL/SQL.",
   },
+  {
+    date: "Nov 2023 – Dic 2023",
+    title: "Desarrollador de Software",
+    company: "EPUNEMI",
+    description:
+      "Desarrollo y mantenimiento de módulos web usando Angular y Node.js. Consultas eficientes sobre PostgreSQL y SQL Server para operaciones académicas y administrativas.",
+  }
 ]
+
 const EDUCATION = [
   {
-    date: "2005 - 2008",
-    title: "Arte y Multimedia",
-    company: "Universidad de Oxford",
+    date: "2013 – 2019",
+    title: "Ingeniería en Sistemas Computacionales",
+    company: "Universidad Estatal de Milagro",
     description:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis, cumque repellat, tempora recusandae aliquam nemo esse natus impedit, nostrum temporibus veritatis eaque soluta aperiam id repudiandae fugiat deserunt! Explicabo, veritatis?",
+      "Formación en desarrollo de software, bases de datos, redes, programación orientada a objetos y sistemas distribuidos.",
   },
-  // Otros elementos de educación
+  {
+    date: "2020",
+    title: "CCNA R&S: Connecting Networks",
+    company: "Cisco – Universidad Estatal de Milagro",
+    description:
+      "Certificación en redes: direccionamiento IP, protocolos de enrutamiento, seguridad de redes y configuración de routers y switches.",
+  },
+  {
+    date: "2020",
+    title: "Taller de REST APIs con Webex Teams",
+    company: "UNEMI – Emerging Technologies Workshop",
+    description:
+      "Aplicación de APIs RESTful en entornos colaborativos, integración con plataformas de mensajería usando Webex Teams.",
+  }
 ]
 const { type } = Astro.props
 ---

@@ -10,10 +10,10 @@ import SocialPill from "@/components/SocialPill.astro";
 <div class="max-w-xl">
   <div class="flex gap-4 mb-4">
     <img
-      class="rounded-full shadow-lg size-24 " 
+      class="rounded-full shadow-lg size-24" 
       src="/me3.webp"
       alt={personalImageAlt}
-      style="width: 100px; height: auto;  "
+      style="width: 100px; height: auto;"
     />
     <a
       href="https://linkedin.com/in/jesus-alejandro-molina-peñaherrera"
@@ -24,32 +24,35 @@ import SocialPill from "@/components/SocialPill.astro";
       <Badge>Disponible para trabajar</Badge>
     </a>
   </div>
+
   <h1
     class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
   >
     Hola, soy Jesús Molina
   </h1>
+
   <p
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
   >
-  Más de 3 años de experiencia como <strong>Ingeniero en Sistemas </strong>
-  de Guayaquil, Ecuador.
-   Especializado en el desarrollo de aplicaciones web y aplicaciones para Windows.
-   <br />
-  <span class="text-yellow-300">He desarrollado una amplia variedad de aplicaciones, desde sistemas empresariales hasta aplicaciones web innovadoras.</span>
-</p>
+    Soy <strong>Ingeniero en Sistemas</strong> con más de 3 años de experiencia desarrollando soluciones web y de escritorio desde Guayaquil, Ecuador. 
+    <br />
+    Especializado en <strong>Angular</strong>, <strong>C# .NET</strong> y <strong>SQL Server</strong>, enfocado en proyectos industriales, administrativos y corporativos.
+  </p>
+
+  <p class="mt-4 text-yellow-300">
+    He liderado y contribuido en el desarrollo de sistemas robustos, eficientes y escalables para sectores agrícola, empresarial y educativo.
+  </p>
+
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:jmolinap95@gmail.com">
       <MailIcon class="size-4" />
       Contáctame
     </SocialPill>
-    <SocialPill
-      href="https://linkedin.com/in/jesus-alejandro-molina-peñaherrera"
-    >
+    <SocialPill href="https://linkedin.com/in/jesus-alejandro-molina-peñaherrera">
       <LinkedInIcon class="size-4" />
       LinkedIn
     </SocialPill>
-    <SocialPill href="https://wa.me/your-whatsapp-0960712144">
+    <SocialPill href="https://wa.me/593960712144">
       <WhatsappIcon class="size-4" />
       WhatsApp
     </SocialPill>

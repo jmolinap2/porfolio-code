@@ -1,10 +1,24 @@
-<div class="flex items-center ">
-<span class="relative inline-flex overflow-hidden rounded-full p-[1px]">
-  <span
-    class="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]"
-  ></span>
-  <div class="inline-flex items-center justify-center w-full px-3 py-1 text-sm text-green-800 bg-green-100 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap">
-    <slot />
-  </div>
-</span>
+<div class="flex items-center">
+  <span class="relative inline-flex overflow-hidden rounded-full p-[1px] group">
+    <span
+      class="absolute inset-[-150%] animate-spin-slow bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)] group-hover:blur-[1.5px] group-hover:opacity-80 transition-opacity duration-700"
+    ></span>
+    <div class="inline-flex items-center justify-center w-full px-3 py-1 text-sm font-semibold text-green-800 bg-green-100 rounded-full cursor-pointer dark:bg-gray-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap">
+      <slot />
+    </div>
+  </span>
 </div>
+
+<style>
+  @keyframes spin-slow {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .animate-spin-slow {
+    animation: spin-slow 5s linear infinite;
+  }
+</style>

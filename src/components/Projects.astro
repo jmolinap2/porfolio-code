@@ -4,6 +4,11 @@ import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import Django from "./icons/Django.astro"
+import Python from "./icons/Python.astro"
+import PostgreSQL from "./icons/Postgresql.astro"
+import Bootstrap from "./icons/Bootstrap.astro"
+
 
 const TAGS = {
   NEXT: {
@@ -16,8 +21,38 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+  DJANGO: {
+    name: "Django",
+    class: "bg-black text-white",
+    icon: Django,
+  },
+  PYTHON: {
+    name: "Python",
+    class: "bg-black text-white",
+    icon: Python,
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: "bg-[#000159] text-white",
+    icon: PostgreSQL,
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-[#001159] text-white",
+    icon: Bootstrap,
+  },
 }
 const PROJECTS = [
+  {
+    title: "DIVAMED - Sistema de Administración y Ventas",
+    description:
+      "Aplicación web desarrollada para la empresa DIVAMED para gestionar inventario, ventas, facturación, usuarios y reportes automatizados. Desarrollada con Django, PostgreSQL y Bootstrap.",
+    image: "/projects/soft-divamed.webp",
+    link: "#", // o URL real si lo tienes publicado
+    //tags: ["tag.DJANGO", "PYTHON", "POSTGRESQL", "BOOTSTRAP"],
+    tags: [TAGS.DJANGO,TAGS.PYTHON, TAGS.POSTGRESQL, TAGS.BOOTSTRAP ],
+
+    },
   {
     title: "SVGL - A beautiful library with SVG logos",
     description:

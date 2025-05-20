@@ -4,31 +4,27 @@ import CSharp from "./icons/Csharp.astro"
 import SqlServer from "./icons/SqlServer.astro"
 import Nodejs from "./icons/Nodejs.astro"
 import Postgresql from "./icons/Postgresql.astro"
+import Django from "./icons/Django.astro"
+import Python from "./icons/Python.astro"
+import Bootstrap from "./icons/Bootstrap.astro"
+
+const STACK = [
+  { name: "Angular", icon: Angular },
+  { name: "C# .NET", icon: CSharp },
+  { name: "SQL Server", icon: SqlServer },
+  { name: "Node.js", icon: Nodejs },
+  { name: "PostgreSQL", icon: Postgresql },
+  { name: "Django", icon: Django },
+  { name: "Python", icon: Python },
+  { name: "Bootstrap", icon: Bootstrap },
+];
 ---
 
 <section class="grid grid-cols-2 md:grid-cols-3 gap-6 text-sm text-white/90">
-  <div class="flex flex-col items-center justify-center gap-2 p-6 bg-white/5 dark:bg-white/10 border border-white/10 rounded-xl hover:scale-105 hover:shadow-lg transition-all duration-300">
-    <Angular class="size-10" />
-    <span class="font-semibold">Angular</span>
-  </div>
-
-  <div class="flex flex-col items-center justify-center gap-2 p-6 bg-white/5 dark:bg-white/10 border border-white/10 rounded-xl hover:scale-105 hover:shadow-lg transition-all duration-300">
-    <CSharp class="size-10" />
-    <span class="font-semibold">C# .NET</span>
-  </div>
-
-  <div class="flex flex-col items-center justify-center gap-2 p-6 bg-white/5 dark:bg-white/10 border border-white/10 rounded-xl hover:scale-105 hover:shadow-lg transition-all duration-300">
-    <SqlServer class="size-10" />
-    <span class="font-semibold">SQL Server</span>
-  </div>
-
-  <div class="flex flex-col items-center justify-center gap-2 p-6 bg-white/5 dark:bg-white/10 border border-white/10 rounded-xl hover:scale-105 hover:shadow-lg transition-all duration-300">
-    <Nodejs class="size-10" />
-    <span class="font-semibold">Node.js</span>
-  </div>
-
-  <div class="flex flex-col items-center justify-center gap-2 p-6 bg-white/5 dark:bg-white/10 border border-white/10 rounded-xl hover:scale-105 hover:shadow-lg transition-all duration-300">
-    <Postgresql class="size-10" />
-    <span class="font-semibold">PostgreSQL</span>
-  </div>
+  {STACK.map(({ name, icon: Icon }) => (
+    <div class="flex flex-col items-center justify-center gap-2 p-6 bg-white/5 dark:bg-white/10 border border-white/10 rounded-xl hover:scale-105 hover:shadow-lg transition-all duration-300">
+      <Icon class="size-10" />
+      <span class="font-semibold">{name}</span>
+    </div>
+  ))}
 </section>

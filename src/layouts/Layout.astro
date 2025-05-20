@@ -1,10 +1,12 @@
 ---
+// ✅ Déjalo así, no lo modifiques con BASE_URL ni template literals.
 import "@fontsource-variable/onest"
 
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
 import { ViewTransitions } from "astro:transitions"
-import { FAVICON_PATH } from "@/utils/constants";
+import { BASE_URL } from "@/utils/constants"; // ✅ este sí se usa para favicon
+
 interface Props {
   title: string
   description: string
@@ -19,7 +21,10 @@ const { description, title } = Astro.props
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" href={FAVICON_PATH} />
+
+    <!-- ✅ favicon corregido -->
+    <link rel="icon" href={`${BASE_URL}favicon.svg`} />
+
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />

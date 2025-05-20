@@ -31,7 +31,7 @@ const navItems = [
 ---
 
 <!-- Área de activación -->
-<div id="menu-trigger-zone" class="fixed top-0 left-0 w-full h-[33vh] z-40"></div>
+<div id="menu-trigger-zone" class="fixed top-0 left-0 w-full h-[15vh] z-40"></div>
 
 <!-- Header oculto por defecto -->
 <header
@@ -58,70 +58,64 @@ const navItems = [
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    const sections = document.querySelectorAll("section")
-    const navItems = document.querySelectorAll("header nav a")
-    const triggerZone = document.getElementById("menu-trigger-zone")
-    const menu = document.getElementById("main-menu")
-    let color = "text-blue-500"
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("header nav a");
+    const triggerZone = document.getElementById("menu-trigger-zone");
+    const menu = document.getElementById("main-menu");
+    const color = "text-blue-500";
 
-    let hideTimeout = null
+    let hideTimeout: number | null = null;
 
-    // Intersection
-    const callback = (entries) => {
+    if (!triggerZone || !menu) return;
+
+    const callback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label") === entry.target.id) {
-              item.classList.add(color)
+              item.classList.add(color);
             } else {
-              item.classList.remove(color)
+              item.classList.remove(color);
             }
-          })
+          });
         }
-      })
-    }
+      });
+    };
 
     const observer = new IntersectionObserver(callback, {
       root: null,
       rootMargin: "0px",
       threshold: 0.3,
-    })
+    });
 
-    sections.forEach((section) => {
-      observer.observe(section)
-    })
+    sections.forEach((section) => observer.observe(section));
 
-    // Mostrar inmediatamente al entrar
     triggerZone.addEventListener("mouseenter", () => {
-      clearTimeout(hideTimeout)
-      menu.classList.remove("opacity-0", "pointer-events-none")
-      menu.classList.add("opacity-100", "pointer-events-auto")
-    })
+      clearTimeout(hideTimeout!);
+      menu.classList.remove("opacity-0", "pointer-events-none");
+      menu.classList.add("opacity-100", "pointer-events-auto");
+    });
 
-    // Ocultar con retardo al salir
     triggerZone.addEventListener("mouseleave", () => {
-  hideTimeout = setTimeout(() => {
-    const hoveringTheme = document.querySelector("#theme-toggle")?.matches(":hover")
-    if (!hoveringTheme) {
-      menu.classList.remove("opacity-100", "pointer-events-auto")
-      menu.classList.add("opacity-0", "pointer-events-none")
-    }
-  }, 800)
-})// ⏱ retardo en milisegundos (0.8s)
+      hideTimeout = window.setTimeout(() => {
+        const hoveringTheme = document.querySelector("#theme-toggle")?.matches(":hover");
+        if (!hoveringTheme) {
+          menu.classList.remove("opacity-100", "pointer-events-auto");
+          menu.classList.add("opacity-0", "pointer-events-none");
+        }
+      }, 800);
+    });
 
-
-    // Cleanup observer
     document.onvisibilitychange = () => {
       if (document.visibilityState === "hidden") {
-        observer.disconnect()
+        observer.disconnect();
       } else {
-        sections.forEach((section) => {
-          observer.observe(section)
-        })
+        sections.forEach((section) => observer.observe(section));
       }
-    }
-  })
+    };
+  });
 </script>
+
 
 
 <style>

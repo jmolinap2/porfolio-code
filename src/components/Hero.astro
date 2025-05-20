@@ -5,13 +5,14 @@ import LinkedInIcon from "@/components/icons/LinkedIn.astro";
 import WhatsappIcon from "@/components/icons/Whatsapp.astro";
 import MailIcon from "@/components/icons/Mail.astro";
 import SocialPill from "@/components/SocialPill.astro";
+const profileImage = `${import.meta.env.BASE_URL}me-1.webp`;
 ---
 
 <div class="max-w-xl animate-fade-in-up">
   <div class="flex gap-4 mb-4">
     <img
       class="rounded-full shadow-lg size-24" 
-      src="/me3.webp"
+      src={profileImage}
       alt={personalImageAlt}
       style="width: 100px; height: auto;"
     />

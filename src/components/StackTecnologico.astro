@@ -1,6 +1,6 @@
 ---
 import Angular from "./icons/Angular.astro"
-import CSharp from "./icons/Csharp.astro"
+import CSharp from "./icons/CSharp.astro"
 import SqlServer from "./icons/SqlServer.astro"
 import Nodejs from "./icons/Nodejs.astro"
 import Postgresql from "./icons/Postgresql.astro"
@@ -20,11 +20,11 @@ const STACK = [
 ];
 ---
 
-<section class="grid grid-cols-2 md:grid-cols-3 gap-6 text-sm text-white/90">
+<section class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-white/90">
   {STACK.map(({ name, icon: Icon }) => (
-    <div class="flex flex-col items-center justify-center gap-2 p-6 bg-white/5 dark:bg-white/10 border border-white/10 rounded-xl hover:scale-105 hover:shadow-lg transition-all duration-300">
-      <Icon class="size-10" />
-      <span class="font-semibold">{name}</span>
+    <div class="flex flex-col items-center justify-center gap-1 p-4 bg-white/5 dark:bg-white/10 border border-white/10 rounded-xl hover:scale-105 hover:shadow-lg transition-all duration-300">
+      <Icon class="size-8" />
+      <span class="font-semibold text-center">{name}</span>
     </div>
   ))}
 </section>

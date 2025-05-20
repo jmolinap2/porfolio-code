@@ -6,7 +6,7 @@ import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
 import { ViewTransitions } from "astro:transitions"
 import { BASE_URL } from "@/utils/constants"; // ✅ este sí se usa para favicon
-
+import { FAVICON_PATH } from "@/utils/constants";
 interface Props {
   title: string
   description: string
@@ -21,10 +21,8 @@ const { description, title } = Astro.props
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-
-    <!-- ✅ favicon corregido -->
-    <link rel="icon" href={`${BASE_URL}favicon.svg`} />
-
+    
+    <link rel="icon" href={FAVICON_PATH} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />

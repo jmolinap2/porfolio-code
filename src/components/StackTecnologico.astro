@@ -7,24 +7,19 @@ import Postgresql from "./icons/Postgresql.astro"
 import Django from "./icons/Django.astro"
 import Python from "./icons/Python.astro"
 import Bootstrap from "./icons/Bootstrap.astro"
-
-const STACK = [
-  { name: "Django", icon: Django },
-  { name: "Python", icon: Python },
-  { name: "Angular", icon: Angular },
-  { name: "SQL Server", icon: SqlServer },
-  { name: "PostgreSQL", icon: Postgresql },
-  { name: "C# .NET", icon: CSharp },
-  { name: "Node.js", icon: Nodejs },
-  { name: "Bootstrap", icon: Bootstrap },
-];
+import { ICONS } from './icons';
+const STACK = Object.entries(ICONS).map(([name, icon]) => ({ name, icon }));
 ---
 
-<section class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-700 dark:text-white/90">
+<section class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 px-4 sm:px-6 lg:px-8 py-12">
   {STACK.map(({ name, icon: Icon }) => (
-    <div class="flex flex-col items-center justify-center gap-1 p-4 bg-gray-100 dark:bg-white/10 border border-gray-300 dark:border-white/10 rounded-xl hover:scale-105 hover:shadow-lg transition-all duration-300">
-      <Icon class="size-8" />
-      <span class="font-semibold text-center">{name}</span>
+    <div
+      class="flex flex-col items-center justify-center gap-2 p-5 border rounded-2xl bg-white dark:bg-white/10 border-gray-200 dark:border-white/10 shadow-sm dark:shadow-none
+             transform transition-all duration-300 ease-in-out
+             hover:scale-105 hover:rotate-[1deg] hover:shadow-[0_0_12px_rgba(0,255,225,0.6)] hover:dark:shadow-[0_0_15px_#00ffe1]"
+    >
+      <Icon class="size-10 transition-transform duration-500 group-hover:rotate-12" />
+      <span class="mt-1 text-sm font-semibold text-gray-800 dark:text-white">{name}</span>
     </div>
   ))}
 </section>

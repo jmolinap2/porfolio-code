@@ -25,6 +25,14 @@ const { description, title } = Astro.props
     <link rel="icon" href={FAVICON_PATH} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+      <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DXH2YX71CQ"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-DXH2YX71CQ');
+  </script>
     <ViewTransitions />
   </head>
 

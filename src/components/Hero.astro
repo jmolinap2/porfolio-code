@@ -43,13 +43,7 @@ const profileImage = `${import.meta.env.BASE_URL}me-1.webp`;
   <p class="mt-4 text-yellow-600 dark:text-green-300">
   He diseñado e implementado sistemas robustos, eficientes y escalables para sectores agrícola, empresarial y educativo.
 </p>
-  <!-- Contador de visitas -->
-  <p class="mt-6 text-sm text-gray-600 dark:text-gray-400 flex items-center gap-2">
-    <svg class="w-4 h-4 text-blue-500 dark:text-blue-300" fill="currentColor" viewBox="0 0 20 20">
-      <path d="M10 3C5 3 1.73 7.11 1 10c.73 2.89 4 7 9 7s8.27-4.11 9-7c-.73-2.89-4-7-9-7zm0 12a5 5 0 110-10 5 5 0 010 10zm0-8a3 3 0 100 6 3 3 0 000-6z"/>
-    </svg>
-    Visitas totales: <span id="visit-counter" class="font-semibold">...</span>
-  </p>
+
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:jmolinap95@gmail.com">
       <MailIcon class="size-4" />
@@ -65,20 +59,3 @@ const profileImage = `${import.meta.env.BASE_URL}me-1.webp`;
     </SocialPill>
   </nav>
 </div>
-
-<!-- Script usando counterapi.dev -->
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", async () => {
-    const site = "jmolinap2-github-io.netlify.app";
-    const key = "visitas";
-    const apiUrl = `https://counterapi.dev/api/v1/increment?site=${site}&key=${key}`;
-
-    try {
-      const res = await fetch(apiUrl);
-      const data = await res.json();
-      document.getElementById("visit-counter").textContent = data.value;
-    } catch (e) {
-      document.getElementById("visit-counter").textContent = "N/A";
-    }
-  });
-</script>

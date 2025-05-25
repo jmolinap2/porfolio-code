@@ -5,6 +5,7 @@ import LinkedInIcon from "@/components/icons/LinkedIn.astro";
 import WhatsappIcon from "@/components/icons/Whatsapp.astro";
 import MailIcon from "@/components/icons/Mail.astro";
 import SocialPill from "@/components/SocialPill.astro";
+import DownloadIcon from "@/components/icons/Download.astro";
 const profileImage = `${import.meta.env.BASE_URL}me-1.webp`;
 ---
 
@@ -15,6 +16,7 @@ const profileImage = `${import.meta.env.BASE_URL}me-1.webp`;
       src={profileImage}
       alt={personalImageAlt}
       style="width: 100px; height: auto;"
+      loading="lazy"
     />
     <a
       href="https://linkedin.com/in/jesus-alejandro-molina-peñaherrera"
@@ -57,5 +59,12 @@ const profileImage = `${import.meta.env.BASE_URL}me-1.webp`;
       <WhatsappIcon class="size-4" />
       WhatsApp
     </SocialPill>
+
+    <div class="rounded-full transition duration-300 ease-in-out hover:shadow-[0_0_10px_#38bdf8] dark:hover:shadow-[0_0_12px_#7dd3fc]">
+  <SocialPill href="/cv-jesus-molina.pdf" download>
+    <DownloadIcon class="size-4" />
+    Descargar CV
+  </SocialPill>
+  </div>
   </nav>
 </div>

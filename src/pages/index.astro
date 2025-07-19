@@ -1,82 +1,53 @@
 ---
-import Layout from "@/layouts/Layout.astro"
-
-import AboutMe from "@/components/AboutMe.astro"
-import Briefcase from "@/components/icons/Briefcase.astro"
-import CodeIcon from "@/components/icons/Code.astro"
-import Experience from "@/components/Experience.astro"
-import ProfileCheck from "@/components/icons/ProfileCheck.astro"
-import Projects from "@/components/Projects.astro"
-import SectionContainer from "@/components/SectionContainer.astro"
-import Hero from "@/components/Hero.astro"
-import StackTecnologico from "@/components/StackTecnologico.astro"
-import Toolbox from "@/components/icons/Toolbox.astro"
-import ScrollIcon from "../components/icons/ScrollIcon.astro"
-
+import Layout from "@/layouts/Layout.astro";
+import SectionContainer from "@/components/SectionContainer.astro";
+import Hero from "@/components/Hero.astro";
+import Services from "@/components/Services.astro";
+import Gallery from "@/components/Gallery.astro";
+import WhyChooseUs from "@/components/WhyChooseUs.astro";
+import AboutUs from "@/components/AboutUs.astro";
+import ScrollIcon from "../components/icons/ScrollIcon.astro";
+import Briefcase from "@/components/icons/Briefcase.astro";
 ---
 
 <Layout
-  title="Porfolio de Alejandro Molina - Desarrollador y Programador Web con más de 3 años de experiencia"
-  description="Contrata a midudev para crear tu aplicación web o móvil. Desarrollador Web y Creador de Contenido. Especializado en crear aplicaciones únicas."
+  title="Misi Spa Ec-Gye - Peluquería canina y felina a domicilio"
+  description="Servicio profesional de peluquería para perros y gatos en la comodidad de tu hogar en Guayaquil."
 >
   <main class="px-4">
     <SectionContainer class="py-6 md:py-16">
-      <Hero>
-      </slot>
-    </Hero>
+      <Hero />
     </SectionContainer>
     <div class="space-y-24">
-      <SectionContainer id="experiencia">
+      <SectionContainer id="servicios">
         <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
           <Briefcase class="size-8" />
-          Experiencia
+          Servicios
         </h2>
-        <div class="flex flex-wrap justify-between gap-8 md:gap-0">
-          <div class="w-full md:w-1/2">
-            <!-- <div class="col-md-3"> -->
-              <h3 class="text-xl font-semibold text-green-400">Educación</h3>
-              <Experience type="education" />
-            
-          </div>
-          <div class="w-full md:w-1/2">
-            <!-- <div class="col-md-3"> -->
-              <h3 class="text-xl font-semibold text-green-400">
-                Experiencia Laboral
-              </h3>
-              <Experience type="work" />
-            
-          </div>
-        </div>
+        <Services />
       </SectionContainer>
 
-      <SectionContainer id="stack">
+      <SectionContainer id="galeria">
         <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
-          <Toolbox class="size-8" />
-          Stack Tecnológico
+          Galería
         </h2>
-        <StackTecnologico />
+        <Gallery />
       </SectionContainer>
 
-    <SectionContainer id="proyectos">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-      >
-        <CodeIcon class="size-30" />
-        Proyectos
-      </h2>
-      <Projects />
-    </SectionContainer>
+      <SectionContainer id="porque">
+        <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
+          ¿Por qué elegirnos?
+        </h2>
+        <WhyChooseUs />
+      </SectionContainer>
 
-    <SectionContainer id="sobre-mi">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
-      >
-        <ProfileCheck class="size-8" />
-        Sobre mí
-      </h2>
-      <AboutMe />
-    </SectionContainer>
-  </div>
+      <SectionContainer id="nosotros">
+        <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
+          Nosotros
+        </h2>
+        <AboutUs />
+      </SectionContainer>
+    </div>
   </main>
   <ScrollIcon />
 </Layout>

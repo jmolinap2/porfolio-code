@@ -1,0 +1,26 @@
+---
+const personalImageAlt = 'Misi Spa - logo o foto';
+const imageUrl = `${import.meta.env.BASE_URL}me-2.webp`;
+---
+
+<article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
+  <div class="[&>p]:mb-4 order-2 md:order-1">
+    <p>
+      En <strong>Misi Spa Ec-Gye</strong> ofrecemos un servicio profesional y amoroso de peluquería canina y felina a domicilio en Guayaquil y Samborondón.
+      Consentimos a tus peluditos con todos los cuidados que se merecen, sin estrés y en la comodidad de tu hogar.
+    </p>
+    <p>
+      Trabajamos únicamente con cita previa para brindarte un servicio puntual y personalizado. Agenda tu cita vía WhatsApp al <strong>+593 93 909 0780</strong>.
+    </p>
+    <p>
+      Actualmente atendemos en Guayaquil y Samborondón. Si deseas confirmar si llegamos a tu sector, contáctanos sin compromiso.
+    </p>
+  </div>
+  <img
+    src={imageUrl}
+    alt={personalImageAlt}
+    class="order-1 object-cover w-72 h-auto md:-mt-4 p-1 md:order-2 rotate-3 lg:p-2 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20"
+    style="object-position: 50% 50%"
+    loading="lazy"
+  />
+</article>

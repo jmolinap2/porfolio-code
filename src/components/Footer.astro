@@ -1,32 +1,14 @@
 ---
 const currentYear = new Date().getFullYear();
-const isProduction = import.meta.env.MODE === 'production';
 ---
 <footer class="opacity-80 m-4 mt-16 w-full mx-auto container lg:max-w-[71.34%] md:max-w-2xl mb-10 flex flex-col items-center">
   <div class="w-full flex flex-col md:flex-row items-center justify-between gap-4">
     <span class="text-sm text-zinc-800/90 dark:text-zinc-200/90 text-center md:text-left">
-      © {currentYear} <a href="/#sobre-mi" class="hover:underline">jmolinap95</a>. 
-      Casi todos los derechos reservados.
-      <a class="text-sm text-gray-600 dark:text-gray-400"> Diseño inspirado por Midu</a>
+      © {currentYear} Misi Spa Ec-Gye. Todos los derechos reservados.
     </span>
-
     <ul class="flex items-center text-sm font-medium dark:text-white/90 gap-6">
-      <li><a href="/#sobre-mi" class="hover:underline">Sobre mí</a></li>
-      <li><a id="contacto" href="mailto:miduga@gmail.com" class="hover:underline">Contacto</a></li>
-      {isProduction && (
-        <li class="flex items-center gap-1">
-          <svg class="w-4 h-4 text-blue-500 dark:text-blue-300" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M10 3C5 3 1.73 7.11 1 10c.73 2.89 4 7 9 7s8.27-4.11 9-7c-.73-2.89-4-7-9-7zm0 12a5 5 0 110-10 5 5 0 010 10zm0-8a3 3 0 100 6 3 3 0 000-6z"/>
-          </svg>
-          <img 
-            src="https://counter1.optistats.ovh/private/freecounterstat.php?c=9jnc7lf3ehtz3bfk6jhx5zfq65z8wt1d" 
-            alt="Visitas"
-            style="height: 16px; filter: invert(0);"
-            class="dark:invert"
-            loading="lazy"
-          />
-        </li>
-      )}
+      <li><a href="https://instagram.com/misi_spacecuador" class="hover:underline">Instagram</a></li>
+      <li><a id="contacto" href="https://wa.me/593939090780" class="hover:underline">WhatsApp</a></li>
     </ul>
   </div>
 </footer>

@@ -1,0 +1,16 @@
+---
+const SERVICES = [
+  'Corte higiénico',
+  'Baño cosmético o medicado',
+  'Cepillado y deslanado',
+  'Limpieza de oídos',
+  'Corte y limado de uñas',
+  'Secado y perfumado',
+];
+---
+
+<ul class="space-y-2 list-disc list-inside">
+  {SERVICES.map((service) => (
+    <li class="text-gray-700 dark:text-gray-300">{service}</li>
+  ))}
+</ul>

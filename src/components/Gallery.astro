@@ -1,0 +1,17 @@
+---
+import { GALLERY_PATH } from "@/utils/constants";
+
+const IMAGES = [
+  { src: `${GALLERY_PATH}client1.webp`, alt: 'Mascota feliz 1' },
+  { src: `${GALLERY_PATH}client2.webp`, alt: 'Mascota feliz 2' },
+  { src: `${GALLERY_PATH}client3.webp`, alt: 'Mascota feliz 3' },
+  { src: `${GALLERY_PATH}client4.webp`, alt: 'Mascota feliz 4' },
+  { src: `${GALLERY_PATH}client5.webp`, alt: 'Mascota feliz 5' },
+];
+---
+
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+  {IMAGES.map(({ src, alt }) => (
+    <img src={src} alt={alt} class="object-cover w-full h-64 rounded-xl shadow" loading="lazy" />
+  ))}
+</div>

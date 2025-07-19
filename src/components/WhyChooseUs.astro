@@ -1,0 +1,14 @@
+---
+const REASONS = [
+  'Atención personalizada',
+  'Trato cariñoso y paciente con cada mascota',
+  'Comodidad total: ¡no tienes que salir de casa!',
+  'Experiencia comprobada en perros y gatos de todas las razas',
+];
+---
+
+<ul class="space-y-2 list-disc list-inside">
+  {REASONS.map((reason) => (
+    <li class="text-gray-700 dark:text-gray-300">{reason}</li>
+  ))}
+</ul>

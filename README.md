@@ -1,27 +1,21 @@
-# 👨🏻‍💻 Porfolio para programadores y desarrolladores
+# Misi Spa Ec-Gye
 
-<div align="center">
-<a href="https://porfolio.dev/">
-<img src="./public/porfolio.webp">
-</a>
-<p></p>
-</div>
+Landing page realizada con **Astro** y **Tailwind CSS** para promocionar el servicio de peluquería canina y felina a domicilio.
 
-<div align="center">
+## Reemplazar imágenes
 
-![Astro Badge](https://img.shields.io/badge/Astro-FF3E00?logo=astro&logoColor=fff&style=flat)
-![Tailwind CSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat)
-![GitHub stars](https://img.shields.io/github/stars/midudev/porfolio.dev)
-![GitHub PRs](https://img.shields.io/github/issues-pr/midudev/porfolio.dev)
-![GitHub forks](https://img.shields.io/github/forks/midudev/porfolio.dev)
-![GitHub issues](https://img.shields.io/github/issues/midudev/porfolio.dev)
+En `public/spa-images` se incluyen imágenes de ejemplo en formato `.webp`. Puedes sustituirlas por tus propias fotografías manteniendo el nombre de archivo o actualizando las rutas dentro del código.
 
-</div>
+- `Imagen1.webp`: logo principal utilizado en la cabecera.
+- `Imagen2.webp` a `Imagen9.webp`: fotos de la galería de mascotas felices.
 
-## 🫂 Contribuidores
+También puedes usar archivos `.jpg` si lo prefieres.
 
-<a href="https://github.com/midudev/porfolio.dev/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=midudev/porfolio.dev" />
-</a>
+## Desarrollo
 
-<p></p>
+Instala las dependencias y ejecuta el servidor de desarrollo:
+
+```bash
+npm install
+npm run dev
+```

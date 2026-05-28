@@ -11,93 +11,111 @@ import Bootstrap from "./icons/Bootstrap.astro"
 import AstroIco from "./icons/AstroIco.astro"
 
 const TAGS = {
-  NEXT:         { name: "Next.js", class: "bg-black text-white brightness-90", icon: NextJS },
-  TAILWIND:     { name: "Tailwind CSS", class: "bg-[#003159] text-white brightness-30", icon: Tailwind },
-  DJANGO:       { name: "Django", class: "bg-[#092e20] text-white brightness-90", icon: Django },
-  PYTHON:       { name: "Python", class: "bg-[#00008b] text-white brightness-90", icon: Python },
-  POSTGRESQL:   { name: "PostgreSQL", class: "bg-[#00315a] text-white brightness-90", icon: PostgreSQL },
-  BOOTSTRAP:    { name: "Bootstrap", class: "bg-[#4c3483] text-white brightness-90", icon: Bootstrap },
-  ASTRO:        { name: "Astro", class: "bg-[#4c3483] text-white brightness-90", icon: AstroIco },
-
+  NEXT:       { name: "Next.js",      class: "bg-black text-white",     icon: NextJS },
+  TAILWIND:   { name: "Tailwind CSS", class: "bg-[#003159] text-white", icon: Tailwind },
+  DJANGO:     { name: "Django",       class: "bg-[#092e20] text-white", icon: Django },
+  PYTHON:     { name: "Python",       class: "bg-[#00008b] text-white", icon: Python },
+  POSTGRESQL: { name: "PostgreSQL",   class: "bg-[#00315a] text-white", icon: PostgreSQL },
+  BOOTSTRAP:  { name: "Bootstrap",    class: "bg-[#4c3483] text-white", icon: Bootstrap },
+  ASTRO:      { name: "Astro",        class: "bg-[#1a1035] text-white", icon: AstroIco },
 }
-import { PROJECTS_PATH } from "@/utils/constants" 
+
+import { PROJECTS_PATH } from "@/utils/constants"
 const PROJECTS = [
   {
     title: "DIVAMED - Sistema de Administración y Ventas",
-    description:
-      "Aplicación web desarrollada para la empresa DIVAMED para gestionar inventario, ventas, facturación, usuarios y reportes automatizados. Desarrollada con Django, PostgreSQL y Bootstrap.",
+    titleEn: "DIVAMED – Administration & Sales System",
+    description: "Aplicación web desarrollada para la empresa DIVAMED para gestionar inventario, ventas, facturación, usuarios y reportes automatizados. Desarrollada con Django, PostgreSQL y Bootstrap.",
+    descriptionEn: "Web application developed for DIVAMED to manage inventory, sales, billing, users and automated reports. Built with Django, PostgreSQL and Bootstrap.",
     image: `${PROJECTS_PATH}soft-divamed.webp`,
     github: "https://github.com/jmolinap2/PuntoDeVenta",
-    link: "#",
+    link: undefined,
     tags: [TAGS.DJANGO, TAGS.PYTHON, TAGS.POSTGRESQL, TAGS.BOOTSTRAP],
   },
   {
     title: "Catálogo de Productos - Landing Page",
-    description: 
-      "Página informativa tipo catálogo con diseño responsivo, desarrollada con Astro y TailwindCSS. Proyecto estático orientado a pruebas de rendimiento y visual UX.",
+    titleEn: "Product Catalog – Landing Page",
+    description: "Página informativa tipo catálogo con diseño responsivo, desarrollada con Astro y TailwindCSS. Proyecto estático orientado a pruebas de rendimiento y visual UX.",
+    descriptionEn: "Responsive catalog-style page built with Astro and TailwindCSS. Static project focused on performance and visual UX.",
     image: `${PROJECTS_PATH}catalogo.webp`,
     link: "https://...",
+    github: undefined,
     tags: [TAGS.ASTRO, TAGS.TAILWIND],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
-    description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    image: `${PROJECTS_PATH}adventjs.webp`,
-    link: "https://adventjs.dev",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-  },
-  {
     title: "SIRIUS PRIME – Sistema de Gestión Veterinaria",
-    description: 
-      "Aplicación web desarrollada para la gestión integral de clínicas veterinarias. Permite registrar usuarios, administrar doctores, departamentos, servicios, y gestionar citas. Proyecto privado desplegado localmente.",
+    titleEn: "SIRIUS PRIME – Veterinary Management System",
+    description: "Aplicación web para la gestión integral de clínicas veterinarias. Permite registrar usuarios, administrar doctores, departamentos, servicios y citas. Proyecto privado desplegado localmente.",
+    descriptionEn: "Web application for comprehensive veterinary clinic management: users, doctors, departments, services and appointments. Private project, local deployment.",
     image: `${PROJECTS_PATH}sirius-prime.webp`,
     github: "https://github.com/jmolinap2/SiriusPrime-Vet",
+    link: undefined,
     tags: [TAGS.DJANGO, TAGS.PYTHON, TAGS.POSTGRESQL],
-  }
-];
-
+  },
+]
 ---
 
-<div class="flex flex-col gap-y-16">
-  {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
-      <article class="flex flex-col gap-6 group md:flex-row md:items-center">
-        <div class="w-full md:w-1/2">
-          <div class="relative flex flex-col items-center transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <img alt={title} class="object-cover w-full h-56 transition-transform duration-500 ease-in-out rounded-xl group-hover:scale-110" loading="lazy" src={image} />
-          </div>
-        </div>
+<div class="flex flex-col gap-y-12">
+  {PROJECTS.map(({ image, title, titleEn, description, descriptionEn, tags, link, github }) => (
+    <article class="group relative flex flex-col gap-6 md:flex-row md:items-center
+      rounded-2xl p-4 md:p-6
+      border border-white/10
+      bg-white dark:bg-white/5
+      hover:bg-purple-50/50 dark:hover:bg-purple-950/20
+      shadow-sm hover:shadow-[0_0_24px_rgba(168,85,247,0.2)] dark:hover:shadow-[0_0_28px_rgba(168,85,247,0.3)]
+      transition-all duration-300
+      before:absolute before:left-0 before:top-6 before:bottom-6 before:w-[3px]
+      before:rounded-full before:bg-gradient-to-b before:from-purple-400 before:to-violet-700
+      before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300">
 
-        <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-3xl font-semibold text-gray-800 dark:text-gray-100">{title}</h3>
-          <ul class="flex flex-wrap mt-2 gap-2">
-            {tags.map((tag) => (
-              <li>
-                <span class={`flex items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 transition-all duration-300 hover:scale-105 hover:shadow-lg`}>
-                  <tag.icon class="size-4" />
-                  {tag.name}
-                </span>
-              </li>
-            ))}
-          </ul>
-          <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-          <footer class="flex items-end justify-start mt-4 gap-x-4">
-            {github && (
-              <LinkButton href={github}>
-                <GitHub class="size-6" />
-                Code
-              </LinkButton>
-            )}
-            {link && (
-              <LinkButton href={link}>
-                <Link class="size-4" />
-                Preview
-              </LinkButton>
-            )}
-          </footer>
-        </div>
-      </article>
-    ))
-  }
+      <div class="w-full md:w-1/2 overflow-hidden rounded-xl shadow-md">
+        <img
+          alt={title}
+          class="object-cover w-full h-56 md:h-64 transition-transform duration-500 ease-in-out group-hover:scale-105"
+          loading="lazy"
+          src={image}
+        />
+      </div>
+
+      <div class="w-full md:w-1/2 flex flex-col gap-3">
+        <h3
+          data-i18n-es={title}
+          data-i18n-en={titleEn}
+          class="text-2xl font-semibold text-gray-800 dark:text-gray-100"
+        >{title}</h3>
+
+        <ul class="flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <li>
+              <span class={`flex items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2.5`}>
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+        <p
+          data-i18n-es={description}
+          data-i18n-en={descriptionEn}
+          class="text-gray-600 dark:text-gray-400 leading-relaxed"
+        >{description}</p>
+
+        <footer class="flex items-center gap-x-4 mt-2">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-5" />
+              <span data-i18n-es="Código" data-i18n-en="Code">Código</span>
+            </LinkButton>
+          )}
+          {link && link !== "#" && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
+            </LinkButton>
+          )}
+        </footer>
+      </div>
+    </article>
+  ))}
 </div>

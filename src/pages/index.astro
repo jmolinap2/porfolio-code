@@ -11,13 +11,12 @@ import SectionContainer from "@/components/SectionContainer.astro"
 import Hero from "@/components/Hero.astro"
 import StackTecnologico from "@/components/StackTecnologico.astro"
 import Toolbox from "@/components/icons/Toolbox.astro"
-import ScrollIcon from "../components/icons/ScrollIcon.astro"
-
+import LanguageSwitcher from "@/components/LanguageSwitcher.astro"
 ---
 
 <Layout
-  title="Porfolio de Alejandro Molina - Desarrollador y Programador Web con más de 3 años de experiencia"
-  description="Contrata a midudev para crear tu aplicación web o móvil. Desarrollador Web y Creador de Contenido. Especializado en crear aplicaciones únicas."
+  title="Portfolio de Alejandro Molina - Desarrollador Web con más de 3 años de experiencia"
+  description="Desarrollador de Software especializado en Angular, C# .NET y Python. Proyectos para sectores agrícola, empresarial y educativo desde Guayaquil, Ecuador."
 >
   <main class="px-4">
     <SectionContainer class="py-6 md:py-16">
@@ -29,22 +28,20 @@ import ScrollIcon from "../components/icons/ScrollIcon.astro"
       <SectionContainer id="experiencia">
         <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
           <Briefcase class="size-8" />
-          Experiencia
+          <span data-i18n-es="Experiencia" data-i18n-en="Experience">Experiencia</span>
         </h2>
         <div class="flex flex-wrap justify-between gap-8 md:gap-0">
           <div class="w-full md:w-1/2">
-            <!-- <div class="col-md-3"> -->
-              <h3 class="text-xl font-semibold text-green-400">Educación</h3>
-              <Experience type="education" />
-            
+            <h3 class="text-xl font-semibold text-purple-400">
+              <span data-i18n-es="Educación" data-i18n-en="Education">Educación</span>
+            </h3>
+            <Experience type="education" />
           </div>
           <div class="w-full md:w-1/2">
-            <!-- <div class="col-md-3"> -->
-              <h3 class="text-xl font-semibold text-green-400">
-                Experiencia Laboral
-              </h3>
-              <Experience type="work" />
-            
+            <h3 class="text-xl font-semibold text-purple-400">
+              <span data-i18n-es="Experiencia Laboral" data-i18n-en="Work Experience">Experiencia Laboral</span>
+            </h3>
+            <Experience type="work" />
           </div>
         </div>
       </SectionContainer>
@@ -52,31 +49,27 @@ import ScrollIcon from "../components/icons/ScrollIcon.astro"
       <SectionContainer id="stack">
         <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
           <Toolbox class="size-8" />
-          Stack Tecnológico
+          <span data-i18n-es="Stack Tecnológico" data-i18n-en="Tech Stack">Stack Tecnológico</span>
         </h2>
         <StackTecnologico />
       </SectionContainer>
 
-    <SectionContainer id="proyectos">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-      >
-        <CodeIcon class="size-30" />
-        Proyectos
-      </h2>
-      <Projects />
-    </SectionContainer>
+      <SectionContainer id="proyectos">
+        <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
+          <CodeIcon class="size-30" />
+          <span data-i18n-es="Proyectos" data-i18n-en="Projects">Proyectos</span>
+        </h2>
+        <Projects />
+      </SectionContainer>
 
-    <SectionContainer id="sobre-mi">
-      <h2
-        class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white"
-      >
-        <ProfileCheck class="size-8" />
-        Sobre mí
-      </h2>
-      <AboutMe />
-    </SectionContainer>
-  </div>
+      <SectionContainer id="sobre-mi">
+        <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-8 text-black/80 dark:text-white">
+          <ProfileCheck class="size-8" />
+          <span data-i18n-es="Sobre mí" data-i18n-en="About me">Sobre mí</span>
+        </h2>
+        <AboutMe />
+      </SectionContainer>
+    </div>
   </main>
-  <ScrollIcon />
+  <LanguageSwitcher />
 </Layout>

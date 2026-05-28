@@ -8,8 +8,15 @@ import Python from './Python.astro';
 import Bootstrap from './Bootstrap.astro';
 import Oracle from './Oracle.astro';
 import Git from './Git.astro';
-import TypeScript from './TypeScript.astro'
-
+import TypeScript from './TypeScript.astro';
+import JavaScript from './JavaScript.astro';
+import Java from './Java.astro';
+import MySQL from './MySQL.astro';
+import PowerBI from './PowerBI.astro';
+import N8n from './N8n.astro';
+import Blazor from './Blazor.astro';
+import EntityFramework from './EntityFramework.astro';
+import jQuery from './jQuery.astro';
 
 export const ICONS = {
   Django,
@@ -23,4 +30,12 @@ export const ICONS = {
   Oracle,
   Git,
   TypeScript,
+  JavaScript,
+  Java,
+  MySQL,
+  'Power BI': PowerBI,
+  n8n: N8n,
+  Blazor,
+  'Entity Framework': EntityFramework,
+  jQuery,
 };

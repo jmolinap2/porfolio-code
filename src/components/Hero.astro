@@ -12,7 +12,7 @@ const profileImage = `${import.meta.env.BASE_URL}me-1.webp`;
 <div class="w-full max-w-2xl md:max-w-3xl animate-fade-in-up">
   <div class="flex gap-4 mb-4">
     <img
-      class="rounded-full shadow-lg size-24" 
+      class="rounded-full shadow-lg size-24"
       src={profileImage}
       alt={personalImageAlt}
       style="width: 100px; height: auto;"
@@ -22,34 +22,44 @@ const profileImage = `${import.meta.env.BASE_URL}me-1.webp`;
       href="https://linkedin.com/in/jesus-alejandro-molina-peñaherrera"
       target="_blank"
       rel="noopener"
-      class="flex items-center transition md:justify-center md:hover:scale-105 "
+      class="flex items-center transition md:justify-center md:hover:scale-105"
     >
-      <Badge>Disponible para trabajar</Badge>
+      <Badge>
+        <span data-i18n-es="Disponible para trabajar" data-i18n-en="Available to work">Disponible para trabajar</span>
+      </Badge>
     </a>
   </div>
 
   <h1
+    data-i18n-es="Hola, soy Jesús Molina"
+    data-i18n-en="Hi, I'm Jesús Molina"
     class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
   >
     Hola, soy Jesús Molina
   </h1>
 
   <p
-    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+    data-i18n-html-es="Soy <strong>Ingeniero en Sistemas</strong> con más de 3 años de experiencia desarrollando soluciones web y de escritorio desde Guayaquil, Ecuador. <br /> Especializado en proyectos industriales, administrativos y corporativos."
+    data-i18n-html-en="I'm a <strong>Systems Engineer</strong> with over 3 years of experience building web and desktop solutions from Guayaquil, Ecuador. <br /> Specialized in industrial, administrative and corporate projects."
+    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-purple-300 [&>strong]:text-purple-600 [&>strong]:font-semibold dark:text-gray-300"
   >
-    Soy <strong>Ingeniero en Sistemas</strong> con más de 3 años de experiencia desarrollando soluciones web y de escritorio desde Guayaquil, Ecuador. 
+    Soy <strong>Ingeniero en Sistemas</strong> con más de 3 años de experiencia desarrollando soluciones web y de escritorio desde Guayaquil, Ecuador.
     <br />
     Especializado en proyectos industriales, administrativos y corporativos.
   </p>
 
-  <p class="mt-4 text-yellow-600 dark:text-green-300">
-  He diseñado e implementado sistemas robustos, eficientes y escalables para sectores agrícola, empresarial y educativo.
-</p>
+  <p
+    data-i18n-es="He diseñado e implementado sistemas robustos, eficientes y escalables para sectores agrícola, empresarial y educativo."
+    data-i18n-en="I have designed and implemented robust, efficient and scalable systems for agricultural, business and educational sectors."
+    class="mt-4 text-purple-600 dark:text-purple-300"
+  >
+    He diseñado e implementado sistemas robustos, eficientes y escalables para sectores agrícola, empresarial y educativo.
+  </p>
 
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:jmolinap95@gmail.com">
       <MailIcon class="size-4" />
-      Contáctame
+      <span data-i18n-es="Contáctame" data-i18n-en="Contact me">Contáctame</span>
     </SocialPill>
     <SocialPill href="https://linkedin.com/in/jesus-alejandro-molina-peñaherrera">
       <LinkedInIcon class="size-4" />
@@ -60,11 +70,11 @@ const profileImage = `${import.meta.env.BASE_URL}me-1.webp`;
       WhatsApp
     </SocialPill>
 
-    <div class="rounded-full transition duration-300 ease-in-out hover:shadow-[0_0_10px_#38bdf8] dark:hover:shadow-[0_0_12px_#7dd3fc]">
-  <SocialPill href="/cv-jesus-molina.pdf" download>
-    <DownloadIcon class="size-4" />
-    Descargar CV
-  </SocialPill>
-  </div>
+    <div class="rounded-full transition duration-300 ease-in-out hover:shadow-[0_0_10px_#a855f7] dark:hover:shadow-[0_0_12px_#c084fc]">
+      <SocialPill href="/cv-jesus-molina.pdf" download>
+        <DownloadIcon class="size-4" />
+        <span data-i18n-es="Descargar CV" data-i18n-en="Download CV">Descargar CV</span>
+      </SocialPill>
+    </div>
   </nav>
 </div>

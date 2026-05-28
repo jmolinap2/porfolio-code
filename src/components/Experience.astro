@@ -3,67 +3,69 @@ import ExperienceItem from "./ExperienceItem.astro"
 
 const WORK_EXPERIENCE = [
   {
-    date: "Oct 2024 – Abr 2025",
+    date: "Oct 2024 – Ago 2025",
     title: "Desarrollador de Software",
+    titleEn: "Software Developer",
     company: "Agrosoft Latam",
-    description:
-      "Desarrollo de soluciones empresariales para el sector agrícola e industrial usando Angular, C# .NET y SQL Server. Automatización de reportes contables y financieros.",
+    description: "Desarrollo de soluciones empresariales para el sector agrícola e industrial usando Angular, C# .NET y SQL Server. Automatización de reportes contables y financieros.",
+    descriptionEn: "Development of enterprise solutions for the agricultural and industrial sectors using Angular, C# .NET and SQL Server. Automation of accounting and financial reports.",
   },
   {
     date: "Abr 2024 – Sep 2024",
     title: "Analista de Datos",
+    titleEn: "Data Analyst",
     company: "Metropolitan Touring C.A.",
-    description:
-      "Análisis y visualización de datos empresariales mediante Power BI, conectando con bases de datos Oracle y creando consultas complejas en PL/SQL.",
+    description: "Análisis y visualización de datos empresariales mediante Power BI, conectando con bases de datos Oracle y creando consultas complejas en PL/SQL.",
+    descriptionEn: "Analysis and visualization of business data using Power BI, connecting to Oracle databases and creating complex PL/SQL queries.",
   },
   {
     date: "Nov 2023 – Dic 2023",
     title: "Desarrollador de Software",
+    titleEn: "Software Developer",
     company: "EPUNEMI",
-    description:
-      "Desarrollo y mantenimiento de módulos web usando Angular y Node.js. Consultas eficientes sobre PostgreSQL y SQL Server para operaciones académicas y administrativas.",
-  }
+    description: "Desarrollo y mantenimiento de módulos web usando Angular y Node.js. Consultas eficientes sobre PostgreSQL y SQL Server para operaciones académicas y administrativas.",
+    descriptionEn: "Development and maintenance of web modules using Angular and Node.js. Efficient queries on PostgreSQL and SQL Server for academic and administrative operations.",
+  },
 ]
 
 const EDUCATION = [
   {
     date: "2013 – 2019",
     title: "Ingeniería en Sistemas Computacionales",
+    titleEn: "Computer Systems Engineering",
     company: "Universidad Estatal de Milagro",
-    description:
-      "Formación en desarrollo de software, bases de datos, redes, programación orientada a objetos y sistemas distribuidos.",
+    description: "Formación en desarrollo de software, bases de datos, redes, programación orientada a objetos y sistemas distribuidos.",
+    descriptionEn: "Training in software development, databases, networks, object-oriented programming and distributed systems.",
   },
   {
     date: "2020",
     title: "CCNA R&S: Connecting Networks",
+    titleEn: "CCNA R&S: Connecting Networks",
     company: "Cisco – Universidad Estatal de Milagro",
-    description:
-      "Certificación en redes: direccionamiento IP, protocolos de enrutamiento, seguridad de redes y configuración de routers y switches.",
+    description: "Certificación en redes: direccionamiento IP, protocolos de enrutamiento, seguridad de redes y configuración de routers y switches.",
+    descriptionEn: "Networking certification: IP addressing, routing protocols, network security and router/switch configuration.",
   },
   {
     date: "2020",
     title: "Taller de REST APIs con Webex Teams",
+    titleEn: "REST APIs with Webex Teams Workshop",
     company: "UNEMI – Emerging Technologies Workshop",
-    description:
-      "Aplicación de APIs RESTful en entornos colaborativos, integración con plataformas de mensajería usando Webex Teams.",
-  }
+    description: "Aplicación de APIs RESTful en entornos colaborativos, integración con plataformas de mensajería usando Webex Teams.",
+    descriptionEn: "Application of RESTful APIs in collaborative environments, integration with messaging platforms using Webex Teams.",
+  },
 ]
+
 const { type } = Astro.props
 ---
-
 
 <div class="contenido-seccion">
   <div class="fila">
     <div class="col izquierda">
-     <!--  <h3>{type === 'education' ? 'Educación' : 'Experiencia de trabajo'}</h3> -->
       <div class="item izq">
         {type === 'education'
-          ? EDUCATION.map((edu) => (
-              <ExperienceItem {...edu} />
-            ))
-          : WORK_EXPERIENCE.map((exp) => (
-              <ExperienceItem {...exp} />
-            ))}
+          ? EDUCATION.map((edu) => <ExperienceItem {...edu} />)
+          : WORK_EXPERIENCE.map((exp) => <ExperienceItem {...exp} />)
+        }
       </div>
     </div>
   </div>

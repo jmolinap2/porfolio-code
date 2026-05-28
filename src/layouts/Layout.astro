@@ -34,6 +34,33 @@ const { description, title } = Astro.props
     gtag('config', 'G-DXH2YX71CQ');
   </script>
     <ViewTransitions />
+    <script is:inline>
+(function () {
+  function applyLang(lang) {
+    document.querySelectorAll('[data-i18n-es]').forEach(function (el) {
+      var text = el.getAttribute('data-i18n-' + lang) || el.getAttribute('data-i18n-es');
+      if (text !== null) el.textContent = text;
+    });
+    document.querySelectorAll('[data-i18n-html-es]').forEach(function (el) {
+      var html = el.getAttribute('data-i18n-html-' + lang) || el.getAttribute('data-i18n-html-es');
+      if (html !== null) el.innerHTML = html;
+    });
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+    document.documentElement.setAttribute('lang', lang);
+  }
+
+  document.addEventListener('astro:page-load', function () {
+    var saved;
+    try { saved = localStorage.getItem('lang'); } catch (e) {}
+    var lang = saved || ((navigator.language || '').startsWith('es') ? 'es' : 'en');
+    applyLang(lang);
+  });
+
+  document.addEventListener('setlang', function (e) {
+    applyLang(e.detail);
+  });
+})();
+    </script>
   </head>
 
   <body class="relative text-black dark:text-white">
